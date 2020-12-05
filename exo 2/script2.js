@@ -1,21 +1,24 @@
+/**     premiere partie exo 1   */
 let list01 = document.getElementById("liste-commissions");
 
 let newItem = document.createElement("li");
-newItem.innerHTML = "une boite d'oeufs";
-list01.append(newItem);
+newItem.innerHTML = "1 boîte d'oeufs";
+list01.appendChild(newItem);
 
-let button = document.getElementById("bouton");
+/** deuxieme partie exo 1  */
 
-button.addEventListener("click", function (){
+let button = document.getElementById("bouton");                     // récup du bouton
 
-    newItem.innerHTML  = document.getElementById("addItem").innerHTML;
-    list01.append(newItem);
+button.addEventListener("click", function (event){   // écoute le bouton
+                                                        // ici on est dans la fonction, si click, alors :
+    event.preventDefault();                                               // supprime le fonctionnement par défaut
+
+    let item = document.getElementById("addItem").value;        // récup le champ ET la valeur
+
+    let newNewItem = document.createElement("li");             // crée un nouvau li
+
+    newNewItem.innerHTML = item;                                     // affecte la valeur de item
+
+    list01.appendChild(newNewItem);                                // ajoute li à la liste
 });
-
-let supprItem = document.getElementById("suppr");
-
-supprItem.addEventListener("click", function (){
-    let i = list01.length -1;
-    list01[i].remove();
-})
 
