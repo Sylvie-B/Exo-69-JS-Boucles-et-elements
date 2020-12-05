@@ -22,3 +22,17 @@ button.addEventListener("click", function (event){   // écoute le bouton
     list01.appendChild(newNewItem);                                // ajoute li à la liste
 });
 
+/** exercice 2 */
+let buttonSuppr = document.getElementById("supprItem");
+
+buttonSuppr.addEventListener("click", function (event) {
+    event.preventDefault();
+    let listItem = document.getElementsByTagName("li");
+    if (listItem.length > 0){
+        listItem[listItem.length-1].remove();
+    }
+    else {
+        alert("votre liste est vide");
+    }
+});
+
